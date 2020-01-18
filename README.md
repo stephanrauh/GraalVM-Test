@@ -16,6 +16,7 @@ This example shows the effect of speculative method-call optimization and de-opt
 GraalVM CE 19.3.0.2 shows a similar result, albeit with several weird speed-ups and slow-down I can't explain yet. However, the result clearly show that GraalVMs also optimizes for three different implementations of a method:
 
 **OpenJDK 64-Bit Server VM GraalVM CE 19.3.0.2 (build 11.0.5+10-jvmci-19.3-b06, mixed mode, sharing)**
+
 | Iteration | Counter 1 | Counter 2 | Counter 3 |
 | --------: | --------: | --------: | --------: |
 |         1 |     88 ms |     38 ms |     48 ms |
