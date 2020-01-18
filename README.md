@@ -4,6 +4,7 @@
 This example shows the effect of speculative method-call optimization and de-optimization. The example shows the speculative optimization for virtual method calls with only one implementation, plus the de-optimization when it turns out there's a second implementation. Likewise, the third method call causes a second de-optimization. On my 2015 MacBook Pro using AdoptOpenJDK 11.0.5+10, this result were like so:
 
 **OpenJDK 64-Bit Server VM AdoptOpenJDK (build 11.0.5+10, mixed mode)**
+
 | Iteration | Counter 1 | Counter 2 | Counter 3 |
 | --------: | --------: | --------: | --------: |
 |         1 |     36 ms |    209 ms |    320 ms |
