@@ -1,0 +1,100 @@
+ 1. calculation took 850 ms
+ 2. calculation took 867 ms
+ 3. calculation took 658 ms
+ 4. calculation took 1045 ms
+ 5. calculation took 668 ms
+ 6. calculation took 253 ms
+ 7. calculation took 373 ms
+ 8. calculation took 408 ms
+ 9. calculation took 644 ms
+10. calculation took 481 ms
+11. calculation took 528 ms
+12. calculation took 1033 ms
+13. calculation took 694 ms
+14. calculation took 254 ms
+15. calculation took 284 ms
+16. calculation took 351 ms
+17. calculation took 477 ms
+18. calculation took 829 ms
+19. calculation took 554 ms
+20. calculation took 602 ms
+21. calculation took 1180 ms
+22. calculation took 267 ms
+23. calculation took 216 ms
+24. calculation took 303 ms
+25. calculation took 447 ms
+26. calculation took 526 ms
+27. calculation took 588 ms
+28. calculation took 1053 ms
+29. calculation took 692 ms
+30. calculation took 254 ms
+31. calculation took 370 ms
+32. calculation took 474 ms
+33. calculation took 401 ms
+34. calculation took 472 ms
+35. calculation took 854 ms
+36. calculation took 627 ms
+37. calculation took 678 ms
+38. calculation took 278 ms
+39. calculation took 213 ms
+40. calculation took 366 ms
+41. calculation took 520 ms
+42. calculation took 442 ms
+43. calculation took 520 ms
+44. calculation took 1022 ms
+45. calculation took 684 ms
+46. calculation took 248 ms
+47. calculation took 274 ms
+48. calculation took 345 ms
+49. calculation took 604 ms
+50. calculation took 475 ms
+51. calculation took 513 ms
+52. calculation took 1007 ms
+53. calculation took 678 ms
+54. calculation took 249 ms
+55. calculation took 372 ms
+56. calculation took 401 ms
+57. calculation took 632 ms
+58. calculation took 493 ms
+59. calculation took 526 ms
+60. calculation took 1018 ms
+61. calculation took 682 ms
+62. calculation took 253 ms
+63. calculation took 279 ms
+64. calculation took 403 ms
+65. calculation took 376 ms
+66. calculation took 442 ms
+67. calculation took 854 ms
+68. calculation took 610 ms
+69. calculation took 670 ms
+70. calculation took 275 ms
+71. calculation took 213 ms
+72. calculation took 367 ms
+73. calculation took 527 ms
+74. calculation took 450 ms
+75. calculation took 514 ms
+76. calculation took 1019 ms
+77. calculation took 684 ms
+78. calculation took 245 ms
+79. calculation took 364 ms
+80. calculation took 452 ms
+81. calculation took 383 ms
+82. calculation took 446 ms
+83. calculation took 847 ms
+84. calculation took 610 ms
+85. calculation took 673 ms
+86. calculation took 278 ms
+87. calculation took 220 ms
+88. calculation took 366 ms
+89. calculation took 528 ms
+90. calculation took 455 ms
+91. calculation took 522 ms
+92. calculation took 1010 ms
+93. calculation took 692 ms
+94. calculation took 253 ms
+95. calculation took 274 ms
+96. calculation took 396 ms
+97. calculation took 383 ms
+98. calculation took 450 ms
+99. calculation took 855 ms
+100. calculation took 611 ms

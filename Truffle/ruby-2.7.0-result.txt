@@ -1,0 +1,22 @@
+Using /Users/stephan/.rvm/gems/ruby-2.7.0
+$ ruby Prime.rb
+1. calculation took 815 ms
+2. calculation took 847 ms
+3. calculation took 855 ms
+4. calculation took 837 ms
+5. calculation took 874 ms
+6. calculation took 890 ms
+7. calculation took 895 ms
+8. calculation took 866 ms
+9. calculation took 843 ms
+10. calculation took 848 ms
+11. calculation took 852 ms
+12. calculation took 842 ms
+13. calculation took 829 ms
+14. calculation took 870 ms
+15. calculation took 848 ms
+16. calculation took 929 ms
+17. calculation took 813 ms
+18. calculation took 888 ms
+19. calculation took 835 ms
+20. calculation took 869 ms
