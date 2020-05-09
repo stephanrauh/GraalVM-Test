@@ -1,35 +1,46 @@
-GraalVM 20.0.0, Java 11.0.6:
-total 48
--rw-r--r--  1 stephan  staff  3299 May  8 21:00 FullyFunctional.class
--rw-r--r--  1 stephan  staff  3269 May  8 21:00 FullyFunctionalInlined.class
--rw-r--r--  1 stephan  staff  2783 May  8 21:00 Measure.class
--rw-r--r--  1 stephan  staff  3298 May  8 21:00 MeasureWithLambda.class
--rw-r--r--  1 stephan  staff  1956 May  8 21:00 PartiallyFunctional.class
--rw-r--r--  1 stephan  staff  1057 May  8 21:00 Procedural.class
-Simple Measurement:
+# GraalVM 20.0.0, Java 11.0.6, compiled with maven.compiler.target = 8 and maven.compiler.source = 8:
+
+## File sizes:
+3299  FullyFunctional.class
+3269  FullyFunctionalInlined.class
+2783  Measure.class
+3298  MeasureWithLambda.class
+1956  PartiallyFunctional.class
+
+## Performance (all values in milliseconds):
+
+### Simple Measurement:
           procedural,  97.8,  87.0,  81.5,  83.2,  79.0,  83.0,  85.2,  86.1,  85.7,  83.9,  84.1,  83.6,  84.0,  83.6,  86.2,  83.6,  83.0,  83.2,  83.4,  83.1,  85.6,  83.8,  83.7,  83.2,  82.9,  83.0,  85.3,  83.3
 partially functional,  90.6,  86.3,  79.3,  79.2,  80.2,  79.1,  78.6,  78.7,  79.0,  79.6,  80.6,  79.4,  79.5,  79.3,  78.7,  79.0,  79.1,  80.8,  79.5,  79.9,  78.6,  79.5,  79.0,  86.7,  81.0,  79.0,  79.5,  79.0
     fully functional, 591.0, 520.1, 509.2, 497.5, 496.8, 497.3, 496.3, 502.6, 509.8, 492.2, 489.0, 490.3, 488.8, 497.6, 490.2, 488.3, 492.7, 495.3, 495.7, 486.6, 490.4, 489.0, 488.5, 490.6, 494.0, 489.3, 491.7, 489.4
   compact functional, 560.8, 519.9, 517.2, 517.8, 518.1, 518.6, 517.5, 516.1, 520.6, 515.5, 524.8, 517.9, 516.6, 522.1, 519.1, 517.9, 518.1, 518.6, 519.1, 516.1, 518.6, 520.2, 519.0, 517.3, 517.0, 516.7, 517.0, 519.9
-Measurement using Lambdas:
+
+### Measurement using Lambdas:
           procedural,  92.8,  84.3,  79.0,  80.8,  79.9,  80.3,  78.8,  78.8,  78.6,  79.3,  79.1,  79.9,  79.3,  78.9,  78.4,  78.7,  79.5,  79.0,  80.5,  79.1,  78.4,  79.2,  79.4,  78.8,  80.1,  78.8,  78.6,  79.2
 partially functional,  90.1,  96.5,  80.7,  79.6,  80.5,  81.4,  80.6,  84.8,  81.8,  82.7,  82.1,  81.1,  81.0,  79.1,  79.6,  82.1,  79.2,  80.3,  80.0,  81.6,  81.5,  81.9,  79.2,  79.9,  79.6,  79.3,  79.5,  81.3
     fully functional, 584.4, 505.9, 496.0, 495.5, 495.6, 496.7, 497.2, 495.3, 498.3, 486.9, 490.8, 487.7, 500.7, 491.5, 489.8, 491.9, 491.6, 487.4, 490.6, 486.7, 489.0, 491.1, 498.2, 488.1, 493.5, 490.0, 490.2, 486.8
   compact functional, 560.8, 533.7, 531.6, 530.8, 532.1, 527.3, 530.2, 527.7, 529.6, 527.0, 526.5, 528.3, 527.6, 530.2, 531.4, 530.6, 527.2, 527.3, 528.1, 526.7, 534.7, 530.4, 529.8, 530.7, 527.7, 528.3, 530.7, 528.4
-AdoptOpenJDK 11.0.5:
-total 48
--rw-r--r--  1 stephan  staff  3299 May  8 21:01 FullyFunctional.class
--rw-r--r--  1 stephan  staff  3269 May  8 21:01 FullyFunctionalInlined.class
--rw-r--r--  1 stephan  staff  2783 May  8 21:01 Measure.class
--rw-r--r--  1 stephan  staff  3298 May  8 21:01 MeasureWithLambda.class
--rw-r--r--  1 stephan  staff  1956 May  8 21:01 PartiallyFunctional.class
--rw-r--r--  1 stephan  staff  1057 May  8 21:01 Procedural.class
-Simple Measurement:
+
+
+# AdoptOpenJDK 11.0.5, compiled with maven.compiler.target = 8 and maven.compiler.source = 8:
+
+## File sizes:
+3299 FullyFunctional.class
+3269 FullyFunctionalInlined.class
+2783 Measure.class
+3298 MeasureWithLambda.class
+1956 PartiallyFunctional.class
+1057 Procedural.class
+
+## Performance (all values in milliseconds):
+
+### Simple Measurement:
           procedural,  62.3,  54.8,  49.4,  49.6,  50.1,  49.3,  49.1,  49.2,  49.5,  49.2,  50.7,  49.7,  49.5,  48.9,  49.3,  49.2,  48.9,  49.2,  49.3,  49.6,  50.2,  50.3,  49.7,  49.5,  49.5,  49.2,  49.3,  49.1
 partially functional,  59.3,  55.4,  51.0,  49.6,  49.4,  49.3,  49.1,  49.6,  49.3,  49.1,  49.5,  50.1,  50.8,  49.8,  49.3,  49.1,  49.3,  49.5,  49.5,  49.3,  49.3,  49.4,  50.9,  49.5,  49.1,  49.4,  49.2,  49.3
     fully functional, 405.6, 331.2, 330.8, 335.1, 333.1, 329.0, 331.3, 329.5, 329.4, 328.3, 324.3, 325.7, 323.5, 321.5, 323.0, 324.1, 322.1, 325.6, 324.2, 335.9, 327.5, 322.3, 329.6, 325.3, 325.1, 324.4, 322.7, 321.0
   compact functional, 763.5, 738.6, 737.3, 734.7, 737.9, 734.4, 736.7, 735.3, 736.8, 737.1, 738.6, 741.7, 738.5, 739.5, 735.7, 738.9, 737.2, 737.0, 736.3, 735.1, 734.0, 740.7, 737.1, 738.1, 738.0, 751.2, 734.2, 736.1
-Measurement using Lambdas:
+
+### Measurement using Lambdas:
           procedural,  60.7,  54.9,  49.2,  49.9,  50.9,  53.7,  49.2,  50.6,  49.7,  51.2,  49.3,  49.1,  48.9,  50.4,  52.5,  49.5,  49.6,  49.6,  49.0,  50.6,  50.4,  50.6,  49.3,  49.4,  50.3,  50.4,  49.5,  49.2
 partially functional,  59.9,  54.6,  51.8,  50.2,  49.1,  49.8,  51.4,  49.6,  49.7,  49.2,  49.3,  50.5,  49.8,  49.7,  49.1,  49.4,  51.1,  50.8,  49.4,  49.2,  50.3,  50.5,  50.0,  49.4,  49.0,  49.3,  50.9,  49.6
     fully functional, 391.1, 332.6, 327.8, 332.5, 338.3, 330.5, 333.2, 331.4, 331.9, 324.8, 329.2, 321.6, 323.5, 323.7, 322.4, 331.0, 328.7, 324.2, 323.1, 321.8, 324.1, 322.6, 323.7, 323.5, 324.9, 323.3, 322.7, 322.8
