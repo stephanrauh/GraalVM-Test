@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Procedural {
-
   public static List<Boolean> isPrime;
 
   public static long countPrimes(int LIMIT) {

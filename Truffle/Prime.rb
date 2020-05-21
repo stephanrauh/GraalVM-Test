@@ -31,12 +31,36 @@ def prime?(num)
   sieve(num).include?(num)
 end
 
+$minDuration = 1000000;
+$maxDuration = 0;
+$cumulatedDuration = 0;
+$cumulatedColdStartDuration = 0
+$fastedIteration = 0;
+$slowestIteration = 0;
+
 def measureCalculation(iteration)
   startTime = Process.clock_gettime(Process::CLOCK_MONOTONIC)
   result = sieve(5*1000*1000)
   endTime = Process.clock_gettime(Process::CLOCK_MONOTONIC)
   duration = (endTime-startTime)*1000;
   puts String(iteration) + ". calculation took " + String(duration.round) + " ms"
+  if ($minDuration > duration) 
+    $minDuration = duration;
+    $fastedIteration = iteration
+  end
+  if ($maxDuration < duration) 
+    $maxDuration = duration;
+    $slowestIteration = iteration
+  end
+  if (iteration <= 10) 
+    $cumulatedColdStartDuration += duration;
+  end
+  $cumulatedDuration += duration;
 end
 
 1.step(100) { |i| measureCalculation(i)}
+
+puts "Average duration: " + String($cumulatedDuration.round / 100)
+puts "Average cold start: " + String($cumulatedColdStartDuration.round / 10)
+puts "Fasted run: " + String($minDuration.round) + " (#" + String($fastedIteration) + ")"
+puts "Slowest run: " + String($maxDuration.round)+ " (#" + String($slowestIteration) + ")"

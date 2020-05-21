@@ -34,7 +34,7 @@ partially functional,  96.2,  90.4,  83.9,  83.6,  82.3,  81.7,  82.8,  82.8,  8
 1956 PartiallyFunctional.class
 1057 Procedural.class
 
-## Performance (all val
+## Performance (all values in milliseconds):
 
 ### Simple Measurement:
           procedural,  64.0,  55.6,  50.0,  51.2,  51.8,  49.5,  49.5,  50.5,  49.8,  49.6,  50.1,  50.1,  49.2,  49.8,  50.7,  49.9,  50.3,  50.7,  49.8,  52.2,  51.3,  52.2,  52.3,  51.0,  52.3,  51.5,  51.8,  52.1

@@ -27,4 +27,19 @@ public class FunctionalIf {
       System.out.println("Endure your work day!");
     }
   }
+
+  private static boolean simpleProcedural(int number) {
+    if (number > 3) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  private static boolean simpleFunctional(int number) {
+    return Optional.of(number)
+                   .filter(n -> n > 3)
+                   .orElseGet(false)
+                   .get();
+  }
 }

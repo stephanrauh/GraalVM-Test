@@ -4,7 +4,6 @@ import java.util.Optional;
 import java.util.stream.IntStream;
 
 public class FullyFunctionalInlined {
-
   public static List<Boolean> isPrime;
 
   public static long countPrimes(final int LIMIT) {

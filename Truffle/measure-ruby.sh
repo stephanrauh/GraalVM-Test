@@ -1,9 +1,7 @@
-echo "Standard node.js"
-node -v
-node ./prime.js
-
 echo
-echo "GraalVM JavaScript"
+echo "GraalVM Ruby"
 export PATH=/Library/Java/JavaVirtualMachines/graalvm-ce-java11-20.1.0/Contents/Home/bin:$PATH
-node -v
-node ./prime.js
+
+gu install ruby 
+ruby --version
+ruby Prime.rb

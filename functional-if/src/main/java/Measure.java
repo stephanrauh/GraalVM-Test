@@ -31,15 +31,15 @@ public class Measure {
     }
   }
 
-  public static double measureProcedural() {
-    long start = System.nanoTime();
-    long count = Procedural.countPrimes(LIMIT);
-    long end = System.nanoTime();
-    if (count != 5183) { // stop the compiler from eliminating the function
-      System.out.println("Wrong number of primes: " + count);
-    }
-    return ((end - start) / 100000) / 10.0;
+public static double measureProcedural() {
+  long start = System.nanoTime();
+  long count = Procedural.countPrimes(LIMIT);
+  long end = System.nanoTime();
+  if (count != 5183) { // stop the compiler from eliminating the function
+    System.out.println("Wrong number of primes: " + count);
   }
+  return ((end - start) / 100000) / 10.0;
+}
 
   public static double measurePartiallyFunctional() {
     long start = System.nanoTime();
