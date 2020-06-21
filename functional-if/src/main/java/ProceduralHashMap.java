@@ -1,12 +1,11 @@
 import java.util.HashMap;
-import java.util.Optional;
 
 public class ProceduralHashMap {
 
   private static HashMap<Integer, Integer> map = new HashMap<>();
 
   static {
-    for (int i = 0; i < 10000; i++) {
+    for (int i = 0; i < 1000; i++) {
       if (i%2 == 0) {
         map.put(i, i);
       }
@@ -45,8 +44,9 @@ public class ProceduralHashMap {
   }
 
   private int max100(int i) {
-    Integer result = map.get(i);
+    var result = map.get(i);
     if (result == null) {
+      map.put(i, 100);
       return 100;
     }
     return result;

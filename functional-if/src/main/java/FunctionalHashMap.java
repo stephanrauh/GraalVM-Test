@@ -6,7 +6,7 @@ public class FunctionalHashMap {
   private static HashMap<Integer, Integer> map = new HashMap<>();
 
   static {
-    for (int i = 0; i < 10000; i++) {
+    for (int i = 0; i < 1000; i++) {
       if (i%2 == 0) {
         map.put(i, i);
       }
@@ -47,6 +47,7 @@ public class FunctionalHashMap {
 
   private int max100(int i) {
     return Optional.ofNullable(map.get(i))
-    .orElseGet(() -> 100);
+                   .orElseGet(() -> { map.put(i, 100); return 100; });
+
   } 
 }
