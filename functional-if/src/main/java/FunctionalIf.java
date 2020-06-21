@@ -39,7 +39,7 @@ public class FunctionalIf {
   private static boolean simpleFunctional(int number) {
     return Optional.of(number)
                    .filter(n -> n > 3)
-                   .orElseGet(false)
-                   .get();
+                   .map(n -> true)
+                   .orElseGet(() -> false);
   }
 }
