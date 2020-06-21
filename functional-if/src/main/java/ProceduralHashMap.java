@@ -47,7 +47,7 @@ public class ProceduralHashMap {
   private int max100(int i) {
     Integer result = map.get(i);
     if (result == null) {
-      return 0;
+      return 100;
     }
     return result;
   } 

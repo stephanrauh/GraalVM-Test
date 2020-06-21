@@ -25,24 +25,10 @@ Recently, the Java world is developing a peculiar programming style. It's a uniq
 this trend in any other programming language, with the exception of LISP.
 
 Many programmers have begun to use streams and optional whenever possible. Among other thing, they've started
-to avoid `if` statements. They can be replace with a combination of `Optional.of()`, `filter()`, and `orElse()`.
+to avoid `if` statements. They can be replaced with a combination of `Optional.of()`, `filter()`, and `orElse()`. 
+Like it or not, that's become a frequent pattern.
 
-It's hard to argue with these programmers. I've learned procedural
-programming decades before learning functional programming, so there's little mental effort to decipher the
-procedural algorithms. The Java weirdness makes is harder for me, still: there are streams, there are optionals,
-there are predicates, suppliers, consumers, callables, and runnables. Other functional don't need all this
-ceremony, so the Java approach looks odd to me, to the point I use it only when there's clearly an advantage
-over procedural programming.
-
-If you're learning Java 8+ as your first programming language, things look different. You're using the entire
-tool set your programming language offers.
-
-As a result, many programmers passionately embrace precisely the feature I consider odd. To them, functional
-programming adds a lot of expressiveness to the algorithm.
-
-There's that. Beauty lies in the eye of the beholder. End of the story.
-
-However, my curiosity was piqued when we talked about performance. To me, it's obvious that the Java approach
+My curiosity was piqued when we talked about performance. To me, it's obvious that the Java approach
 to functional programming costs a lot of performance. That's because I know how it's implemented. Most
 programmers disagree. So this project runs a couple of benchmarks with different flavors of the same algorithm.
 
