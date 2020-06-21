@@ -1,0 +1,200 @@
+Compiled from "FunctionalZipCode.java"
+public class FunctionalZipCode {
+  private static java.util.List<java.lang.String> zipCodes;
+
+  private Logger log;
+
+  public FunctionalZipCode();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: aload_0
+       5: new           #2                  // class Logger
+       8: dup
+       9: invokespecial #3                  // Method Logger."<init>":()V
+      12: putfield      #4                  // Field log:LLogger;
+      15: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: new           #5                  // class FunctionalZipCode
+       3: dup
+       4: invokespecial #6                  // Method "<init>":()V
+       7: astore_1
+       8: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      11: invokevirtual #8                  // Method java/io/PrintStream.println:()V
+      14: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      17: ldc           #9                  // String Running the benchmark with a cold JVM
+      19: invokevirtual #10                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+      22: aload_1
+      23: invokevirtual #11                 // Method testAndMeasure:()V
+      26: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      29: ldc           #12                 // String Warmup phase
+      31: invokevirtual #10                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+      34: iconst_0
+      35: istore_2
+      36: iload_2
+      37: sipush        10000
+      40: if_icmpge     54
+      43: aload_1
+      44: invokevirtual #13                 // Method runTest:()I
+      47: pop
+      48: iinc          2, 1
+      51: goto          36
+      54: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      57: ldc           #14                 // String Test phase
+      59: invokevirtual #10                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+      62: aload_1
+      63: invokevirtual #11                 // Method testAndMeasure:()V
+      66: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      69: invokevirtual #8                  // Method java/io/PrintStream.println:()V
+      72: return
+
+  private void testAndMeasure();
+    Code:
+       0: invokestatic  #15                 // Method java/lang/System.nanoTime:()J
+       3: lstore_1
+       4: aload_0
+       5: invokevirtual #13                 // Method runTest:()I
+       8: istore_3
+       9: invokestatic  #15                 // Method java/lang/System.nanoTime:()J
+      12: lstore        4
+      14: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      17: lload         4
+      19: lload_1
+      20: lsub
+      21: ldc2_w        #16                 // long 1000l
+      24: ldiv
+      25: l2d
+      26: ldc2_w        #18                 // double 1000.0d
+      29: ddiv
+      30: iload_3
+      31: invokedynamic #20,  0             // InvokeDynamic #0:makeConcatWithConstants:(DI)Ljava/lang/String;
+      36: invokevirtual #10                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+      39: return
+
+  private int runTest();
+    Code:
+       0: iconst_0
+       1: istore_1
+       2: getstatic     #21                 // Field zipCodes:Ljava/util/List;
+       5: invokeinterface #22,  1           // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+      10: astore_2
+      11: aload_2
+      12: invokeinterface #23,  1           // InterfaceMethod java/util/Iterator.hasNext:()Z
+      17: ifeq          44
+      20: aload_2
+      21: invokeinterface #24,  1           // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+      26: checkcast     #25                 // class java/lang/String
+      29: astore_3
+      30: aload_0
+      31: aload_3
+      32: invokevirtual #26                 // Method isZipCodeValid:(Ljava/lang/String;)Z
+      35: ifeq          41
+      38: iinc          1, 1
+      41: goto          11
+      44: iload_1
+      45: ireturn
+
+  private boolean isZipCodeValid(java.lang.String);
+    Code:
+       0: aload_1
+       1: invokestatic  #27                 // Method java/util/Optional.ofNullable:(Ljava/lang/Object;)Ljava/util/Optional;
+       4: invokedynamic #28,  0             // InvokeDynamic #1:test:()Ljava/util/function/Predicate;
+       9: invokestatic  #29                 // InterfaceMethod java/util/function/Predicate.not:(Ljava/util/function/Predicate;)Ljava/util/function/Predicate;
+      12: invokevirtual #30                 // Method java/util/Optional.filter:(Ljava/util/function/Predicate;)Ljava/util/Optional;
+      15: invokedynamic #31,  0             // InvokeDynamic #2:test:()Ljava/util/function/Predicate;
+      20: invokevirtual #30                 // Method java/util/Optional.filter:(Ljava/util/function/Predicate;)Ljava/util/Optional;
+      23: invokedynamic #32,  0             // InvokeDynamic #3:test:()Ljava/util/function/Predicate;
+      28: invokevirtual #30                 // Method java/util/Optional.filter:(Ljava/util/function/Predicate;)Ljava/util/Optional;
+      31: aload_0
+      32: aload_1
+      33: invokedynamic #33,  0             // InvokeDynamic #4:get:(LFunctionalZipCode;Ljava/lang/String;)Ljava/util/function/Supplier;
+      38: invokevirtual #34                 // Method java/util/Optional.or:(Ljava/util/function/Supplier;)Ljava/util/Optional;
+      41: invokevirtual #35                 // Method java/util/Optional.isPresent:()Z
+      44: ireturn
+
+  private java.util.Optional lambda$isZipCodeValid$2(java.lang.String);
+    Code:
+       0: aload_0
+       1: getfield      #4                  // Field log:LLogger;
+       4: ldc           #36                 // String invalid zip code: {}
+       6: aload_1
+       7: invokevirtual #37                 // Method Logger.error:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+      10: pop
+      11: invokestatic  #38                 // Method java/util/Optional.empty:()Ljava/util/Optional;
+      14: areturn
+
+  private static boolean lambda$isZipCodeValid$1(java.lang.String);
+    Code:
+       0: aload_0
+       1: ldc           #39                 // String [0-9]+
+       3: invokevirtual #40                 // Method java/lang/String.matches:(Ljava/lang/String;)Z
+       6: ireturn
+
+  private static boolean lambda$isZipCodeValid$0(java.lang.String);
+    Code:
+       0: aload_0
+       1: invokevirtual #41                 // Method java/lang/String.length:()I
+       4: iconst_5
+       5: if_icmpne     12
+       8: iconst_1
+       9: goto          13
+      12: iconst_0
+      13: ireturn
+
+  static {};
+    Code:
+       0: new           #42                 // class java/util/ArrayList
+       3: dup
+       4: sipush        10000
+       7: invokespecial #43                 // Method java/util/ArrayList."<init>":(I)V
+      10: putstatic     #21                 // Field zipCodes:Ljava/util/List;
+      13: iconst_0
+      14: istore_0
+      15: iload_0
+      16: sipush        10000
+      19: if_icmpge     114
+      22: iload_0
+      23: iconst_2
+      24: irem
+      25: ifne          54
+      28: getstatic     #21                 // Field zipCodes:Ljava/util/List;
+      31: iload_0
+      32: invokestatic  #44                 // Method java/lang/String.valueOf:(I)Ljava/lang/String;
+      35: invokedynamic #45,  0             // InvokeDynamic #5:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+      40: iconst_0
+      41: iconst_5
+      42: invokevirtual #46                 // Method java/lang/String.substring:(II)Ljava/lang/String;
+      45: invokeinterface #47,  2           // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+      50: pop
+      51: goto          108
+      54: iload_0
+      55: iconst_5
+      56: irem
+      57: ifne          73
+      60: getstatic     #21                 // Field zipCodes:Ljava/util/List;
+      63: aconst_null
+      64: invokeinterface #47,  2           // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+      69: pop
+      70: goto          108
+      73: iload_0
+      74: iconst_3
+      75: irem
+      76: ifne          97
+      79: getstatic     #21                 // Field zipCodes:Ljava/util/List;
+      82: iconst_4
+      83: iload_0
+      84: imul
+      85: invokestatic  #44                 // Method java/lang/String.valueOf:(I)Ljava/lang/String;
+      88: invokeinterface #47,  2           // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+      93: pop
+      94: goto          108
+      97: getstatic     #21                 // Field zipCodes:Ljava/util/List;
+     100: ldc           #48                 // String Hello
+     102: invokeinterface #47,  2           // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+     107: pop
+     108: iinc          0, 1
+     111: goto          15
+     114: return
+}

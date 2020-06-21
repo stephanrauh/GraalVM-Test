@@ -1,7 +1,0 @@
-
-Running the benchmark with a cold JVM
-Time elapsed: 10.503 ms result=100
-Warmup phase
-Test phase
-Time elapsed: 0.022 ms result=100
-

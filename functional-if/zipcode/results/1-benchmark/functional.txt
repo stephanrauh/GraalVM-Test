@@ -1,0 +1,7 @@
+
+Running the benchmark with a cold JVM
+Time elapsed: 50.127 ms valid codes = 6000
+Warmup phase
+Test phase
+Time elapsed: 1.897 ms valid codes = 6000
+
