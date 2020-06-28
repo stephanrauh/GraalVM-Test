@@ -47,7 +47,10 @@ public class FunctionalHashMap {
 
   private int max100(int i) {
     return Optional.ofNullable(map.get(i))
-                   .orElseGet(() -> { map.put(i, 100); return 100; });
-
+                   .orElseGet(
+                     () -> { 
+                       map.put(i, 100); 
+                       return 100; 
+                    });
   } 
 }
