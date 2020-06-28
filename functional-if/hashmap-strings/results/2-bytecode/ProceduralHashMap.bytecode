@@ -1,0 +1,147 @@
+Compiled from "ProceduralHashMap.java"
+public class ProceduralHashMap {
+  private static java.util.HashMap<java.lang.Integer, java.lang.String> map;
+
+  public ProceduralHashMap();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: new           #2                  // class ProceduralHashMap
+       3: dup
+       4: invokespecial #3                  // Method "<init>":()V
+       7: astore_1
+       8: getstatic     #4                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      11: invokevirtual #5                  // Method java/io/PrintStream.println:()V
+      14: getstatic     #4                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      17: ldc           #6                  // String Running the benchmark with a cold JVM
+      19: invokevirtual #7                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+      22: aload_1
+      23: invokevirtual #8                  // Method testAndMeasure:()V
+      26: getstatic     #4                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      29: ldc           #9                  // String Warmup phase
+      31: invokevirtual #7                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+      34: iconst_0
+      35: istore_2
+      36: iload_2
+      37: ldc           #10                 // int 500000
+      39: if_icmpge     53
+      42: aload_1
+      43: invokevirtual #11                 // Method runTest:()Ljava/lang/String;
+      46: pop
+      47: iinc          2, 1
+      50: goto          36
+      53: getstatic     #4                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      56: ldc           #12                 // String Test phase
+      58: invokevirtual #7                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+      61: aload_1
+      62: invokevirtual #8                  // Method testAndMeasure:()V
+      65: getstatic     #4                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      68: invokevirtual #5                  // Method java/io/PrintStream.println:()V
+      71: return
+
+  private void testAndMeasure();
+    Code:
+       0: invokestatic  #13                 // Method java/lang/System.nanoTime:()J
+       3: lstore_1
+       4: aload_0
+       5: invokevirtual #11                 // Method runTest:()Ljava/lang/String;
+       8: astore_3
+       9: invokestatic  #13                 // Method java/lang/System.nanoTime:()J
+      12: lstore        4
+      14: getstatic     #4                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      17: lload         4
+      19: lload_1
+      20: lsub
+      21: ldc2_w        #14                 // long 1000l
+      24: ldiv
+      25: l2d
+      26: ldc2_w        #16                 // double 1000.0d
+      29: ddiv
+      30: aload_3
+      31: invokedynamic #18,  0             // InvokeDynamic #0:makeConcatWithConstants:(DLjava/lang/String;)Ljava/lang/String;
+      36: invokevirtual #7                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+      39: return
+
+  private java.lang.String runTest();
+    Code:
+       0: aconst_null
+       1: astore_1
+       2: iconst_0
+       3: istore_2
+       4: iload_2
+       5: sipush        1000
+       8: if_icmpge     23
+      11: aload_0
+      12: iload_2
+      13: invokevirtual #19                 // Method max100:(I)Ljava/lang/String;
+      16: astore_1
+      17: iinc          2, 1
+      20: goto          4
+      23: aload_1
+      24: areturn
+
+  private java.lang.String max100(int);
+    Code:
+       0: getstatic     #20                 // Field map:Ljava/util/HashMap;
+       3: iload_1
+       4: invokestatic  #21                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       7: invokevirtual #22                 // Method java/util/HashMap.get:(Ljava/lang/Object;)Ljava/lang/Object;
+      10: checkcast     #23                 // class java/lang/String
+      13: astore_2
+      14: aload_2
+      15: ifnonnull     59
+      18: new           #24                 // class java/lang/StringBuilder
+      21: dup
+      22: new           #25                 // class java/lang/Integer
+      25: dup
+      26: iload_1
+      27: sipush        314
+      30: ixor
+      31: invokespecial #26                 // Method java/lang/Integer."<init>":(I)V
+      34: invokevirtual #27                 // Method java/lang/Integer.toString:()Ljava/lang/String;
+      37: invokespecial #28                 // Method java/lang/StringBuilder."<init>":(Ljava/lang/String;)V
+      40: invokevirtual #29                 // Method java/lang/StringBuilder.reverse:()Ljava/lang/StringBuilder;
+      43: invokevirtual #30                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      46: astore_2
+      47: getstatic     #20                 // Field map:Ljava/util/HashMap;
+      50: iload_1
+      51: invokestatic  #21                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+      54: aload_2
+      55: invokevirtual #31                 // Method java/util/HashMap.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+      58: pop
+      59: aload_2
+      60: areturn
+
+  static {};
+    Code:
+       0: new           #32                 // class java/util/HashMap
+       3: dup
+       4: invokespecial #33                 // Method java/util/HashMap."<init>":()V
+       7: putstatic     #20                 // Field map:Ljava/util/HashMap;
+      10: iconst_0
+      11: istore_0
+      12: iload_0
+      13: sipush        1000
+      16: if_icmpge     53
+      19: iload_0
+      20: iconst_2
+      21: irem
+      22: ifne          47
+      25: getstatic     #20                 // Field map:Ljava/util/HashMap;
+      28: iload_0
+      29: invokestatic  #21                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+      32: new           #25                 // class java/lang/Integer
+      35: dup
+      36: iload_0
+      37: invokespecial #26                 // Method java/lang/Integer."<init>":(I)V
+      40: invokevirtual #27                 // Method java/lang/Integer.toString:()Ljava/lang/String;
+      43: invokevirtual #31                 // Method java/util/HashMap.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+      46: pop
+      47: iinc          0, 1
+      50: goto          12
+      53: return
+}
