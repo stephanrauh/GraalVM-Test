@@ -1,4 +1,6 @@
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home
+unset JAVA_HOME
+/usr/libexec/java_home -v 11.0.9.1
+export JAVA_VERSION=11.0.9.1
 
 javac de/Measure.java
 java --version
@@ -6,3 +8,4 @@ java --version
 # java -Xbatch -XX:-TieredCompilation -XX:+UnlockDiagnosticVMOptions -XX:-LogCompilation -XX:CompileCommand=print,Measure.incrementManyTimes Measure
 ## java -XX:+UnlockDiagnosticVMOptions -XX:+TraceClassLoading -XX:+LogCompilation -XX:+PrintAssembly de.Measure
 java de.Measure
+java de.Measure > "AdoptOpenJDK (build 11.0.9.1+1, mixed mode).txt"
