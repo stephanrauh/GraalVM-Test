@@ -1,4 +1,4 @@
-SET JAVA_HOME=C:\noscan\graalvm-ce-java11-21.0.0-dev
+SET JAVA_HOME=C:\java-versions\graalvm-ce-java11-21.0.0-dev
 SET PATH=%JAVA_HOME%\bin;%PATH%
 
 javac de/Measure.java
