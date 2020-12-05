@@ -1,0 +1,6 @@
+Iteration	Counter 1	Counter 2	Counter 3	
+1		48 ms		185 ms		288 ms		
+2		45 ms		172 ms		290 ms		
+3		30 ms		171 ms		291 ms		
+4		33 ms		174 ms		291 ms		
+5		33 ms		177 ms		286 ms		

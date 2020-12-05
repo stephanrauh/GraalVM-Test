@@ -1,15 +1,49 @@
 package de;
 
 public class Measure {
-    static long[][] timers = new long[4][];
+    static long[][] timers = new long[5][];
 
     public static void main(String[] args) {
-        for (int i = 1; i < 4; i++) {
-            timers[i]=new long[5];
+        for (int i = 1; i < timers.length; i++) {
+            timers[i]=new long[timers.length];
         }
+
+        new Measure().testSuite();
+        printResult();
+    }
+
+    public void testSuite() {
+        for (int i = 1; i < timers.length; i++) {
+            timers[i]=new long[timers.length];
+        }
+
         measure(new Counter1(),timers[1]);
         measure(new Counter2(),timers[2]);
         measure(new Counter3(),timers[3]);
+    }
+
+    private long measure(Counter cnt, long[] timer) {
+        final int SAMPLESIZE = timer.length;
+        long result = 0;
+        for (int i = 0; i < SAMPLESIZE; i++) {
+            long start = System.nanoTime();
+            result += runCounters(cnt);
+            long stop = System.nanoTime();
+            timer[i]=(stop-start) / 1_000_000;
+        }
+        return result;
+    }
+
+    private long runCounters(Counter cnt) {
+       final int LOOPSIZE = 100_000_000;
+       long result = 0;
+       for (int j = 0; j < LOOPSIZE; j++) {
+            result += cnt.inc();
+        }
+        return result;
+    }
+
+    public static void printResult() {
         System.out.print("Iteration");
         System.out.print("\t");
         System.out.print("Counter 1");
@@ -27,22 +61,6 @@ public class Measure {
             }
             System.out.println();
         }
-    }
-
-    private static long measure(Counter cnt, long[] timer) {
-        final int SAMPLESIZE = 5;
-        final int LOOPSIZE = 100_000_000;
-        int result = 0;
-        for (int i = 0; i < SAMPLESIZE; i++) {
-            long start = System. nanoTime ();
-            for (int j = 0; j < LOOPSIZE; j++) {
-                result +=  cnt.inc() ;
-            }
-
-            long stop = System. nanoTime ();
-            timer[i]=(stop-start)/ 1_000_000;
-        }
-        return result;
     }
 }
 
