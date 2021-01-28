@@ -23,7 +23,7 @@ const sieve = max => {
   }, []);
 };
 
-for (let i = 1; i <= 2000; i++) {
+for (let i = 1; i <= 300; i++) {
   const start = +new Date();
   const result = sieve(5 * 1000 * 1000);
   const end = +new Date();

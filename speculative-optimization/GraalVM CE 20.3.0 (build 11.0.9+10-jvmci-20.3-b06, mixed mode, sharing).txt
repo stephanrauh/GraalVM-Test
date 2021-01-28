@@ -1,6 +1,36 @@
+Counter1 0
+Counter1 0 35
+Counter1 1
+Counter1 1 42
+Counter1 2
+Counter1 2 28
+Counter1 3
+Counter1 3 28
+Counter1 4
+Counter1 4 28
+Counter2 0
+Counter2 0 36
+Counter2 1
+Counter2 1 172
+Counter2 2
+Counter2 2 172
+Counter2 3
+Counter2 3 172
+Counter2 4
+Counter2 4 172
+Counter3 0
+Counter3 0 36
+Counter3 1
+Counter3 1 174
+Counter3 2
+Counter3 2 175
+Counter3 3
+Counter3 3 175
+Counter3 4
+Counter3 4 176
 Iteration	Counter 1	Counter 2	Counter 3	
-1		49 ms		38 ms		36 ms		
-2		33 ms		174 ms		175 ms		
-3		28 ms		170 ms		176 ms		
-4		28 ms		171 ms		175 ms		
-5		30 ms		172 ms		174 ms		
+1		35 ms		36 ms		36 ms		
+2		42 ms		172 ms		174 ms		
+3		28 ms		172 ms		175 ms		
+4		28 ms		172 ms		175 ms		
+5		28 ms		172 ms		176 ms		

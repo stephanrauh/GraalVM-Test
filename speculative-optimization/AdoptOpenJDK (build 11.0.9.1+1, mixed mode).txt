@@ -1,0 +1,6 @@
+Iteration	Counter 1	Counter 2	Counter 3	Counter 4	Counter 5	Counter 6	Counter 7	Counter 8	Counter 9	Counter 10	
+1			47 ms		185 ms		297 ms		313 ms		299 ms		313 ms		307 ms		321 ms		309 ms		321 ms		
+2			43 ms		169 ms		289 ms		321 ms		282 ms		314 ms		290 ms		316 ms		282 ms		318 ms		
+3			30 ms		183 ms		292 ms		286 ms		283 ms		302 ms		292 ms		295 ms		291 ms		302 ms		
+4			30 ms		175 ms		286 ms		286 ms		282 ms		285 ms		296 ms		289 ms		283 ms		284 ms		
+5			29 ms		176 ms		286 ms		289 ms		289 ms		282 ms		289 ms		289 ms		288 ms		287 ms		

@@ -1,0 +1,44 @@
+Standard node.js
+v14.15.1
+1. calculation took 182 milliseconds
+2. calculation took 94 milliseconds
+3. calculation took 95 milliseconds
+4. calculation took 96 milliseconds
+5. calculation took 131 milliseconds
+10. calculation took 89 milliseconds
+50. calculation took 128 milliseconds
+100. calculation took 86 milliseconds
+150. calculation took 86 milliseconds
+200. calculation took 86 milliseconds
+250. calculation took 86 milliseconds
+300. calculation took 87 milliseconds
+
+GraalVM JavaScript
+v12.18.4
+1. calculation took 1462 milliseconds
+2. calculation took 1159 milliseconds
+3. calculation took 1109 milliseconds
+4. calculation took 474 milliseconds
+5. calculation took 515 milliseconds
+10. calculation took 473 milliseconds
+50. calculation took 216 milliseconds
+100. calculation took 244 milliseconds
+150. calculation took 200 milliseconds
+200. calculation took 201 milliseconds
+250. calculation took 201 milliseconds
+300. calculation took 199 milliseconds
+
+GraalVM 21.0.0 JavaScript
+v12.20.1
+1. calculation took 1496 milliseconds
+2. calculation took 1127 milliseconds
+3. calculation took 1126 milliseconds
+4. calculation took 470 milliseconds
+5. calculation took 437 milliseconds
+10. calculation took 407 milliseconds
+50. calculation took 209 milliseconds
+100. calculation took 219 milliseconds
+150. calculation took 198 milliseconds
+200. calculation took 199 milliseconds
+250. calculation took 198 milliseconds
+300. calculation took 205 milliseconds
