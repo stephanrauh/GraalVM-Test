@@ -1,0 +1,42 @@
+Called from Java:
+OpenJDK 64-Bit Server VM GraalVM CE 21.0.0 (build 11.0.10+8-jvmci-21.0-b06, mixed mode, sharing)
+1. calculation took 1604 ms
+2. calculation took 955 ms
+3. calculation took 923 ms
+4. calculation took 473 ms
+5. calculation took 472 ms
+10. calculation took 438 ms
+50. calculation took 238 ms
+100. calculation took 212 ms
+150. calculation took 212 ms
+200. calculation took 209 ms
+The fastest calculation took 208 ms
+
+Run via GraalVM's `js` command:
+Stephans-MBP-2:MultilingualTruffle stephan$ ./polyglot2-graalvm-node.sh 
+/Library/Java/JavaVirtualMachines/graalvm-ce-java11-21.0.0/Contents/Home
+1. calculation took 1747 ms
+2. calculation took 1539 ms
+3. calculation took 1827 ms
+4. calculation took 167 ms
+5. calculation took 172 ms
+6. calculation took 212 ms
+10. calculation took 165 ms
+50. calculation took 164 ms
+100. calculation took 163 ms
+150. calculation took 197 ms
+The fastest calculation took 159 ms
+
+Run as native node.js application:
+Stephans-MBP-2:MultilingualTruffle stephan$ node benchmark-node.mjs 
+1. calculation took 147 ms
+2. calculation took 100 ms
+3. calculation took 98 ms
+4. calculation took 96 ms
+5. calculation took 126 ms
+6. calculation took 95 ms
+10. calculation took 89 ms
+50. calculation took 88 ms
+100. calculation took 92 ms
+150. calculation took 88 ms
+The fastest calculation took 87 ms
