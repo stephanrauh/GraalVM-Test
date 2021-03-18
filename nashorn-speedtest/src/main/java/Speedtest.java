@@ -34,6 +34,9 @@ public class Speedtest {
                 if (i <= 2 || (i % 10 == 0 && i < 30) || (i % 50 == 0)) {
                     System.out.println("#" + i + ":\t" + Math.round((stop - start) / 1e6) + " ms");
                 }
+                try {
+                    Thread.sleep(100); // let the CPU cool down
+                } catch (Exception e) {}
             }
         } finally {
             Context.exit();
@@ -59,6 +62,9 @@ public class Speedtest {
             if (i <= 2 || (i % 10 == 0 && i < 30) || (i % 50 == 0)) {
                 System.out.println("#" + i + ":\t" + Math.round((stop - start) / 1e6) + " ms");
             }
+            try {
+                Thread.sleep(100); // let the CPU cool down
+            } catch (Exception e) {}
         }
     }
 
@@ -75,7 +81,49 @@ public class Speedtest {
                 if (i <= 2 || (i % 10 == 0 && i < 30) || (i % 50 == 0)) {
                     System.out.println("#" + i + ":\t" + Math.round((stop - start) / 1e6) + " ms");
                 }
+                try {
+                    Thread.sleep(100); // let the CPU cool down
+                } catch (Exception e) {}
             }
+        }
+    }
+
+    static void graalUsingEngine(String parser, String code, org.graalvm.polyglot.Engine engine) throws ScriptException, NoSuchMethodException {
+        try (org.graalvm.polyglot.Context context =  org.graalvm.polyglot.Context.newBuilder()
+                                                                                .engine(engine)
+                                                                                .build()) {
+            Value jsBindings = context.getBindings("js");
+            context.eval("js", parser);
+            for (int i = 1; i <= RUNS; ++i) {
+                long start = System.nanoTime();
+                Value esprima = jsBindings.getMember("esprima");
+                Value tree = esprima.invokeMember("parse", parser);
+                Value tokens = esprima.invokeMember("tokenize", parser);
+                long stop = System.nanoTime();
+                if (i <= 2 || (i % 10 == 0 && i < 30) || (i % 50 == 0)) {
+                    System.out.println("#" + i + ":\t" + Math.round((stop - start) / 1e6) + " ms");
+                }
+                try {
+                    Thread.sleep(100); // let the CPU cool down
+                } catch (Exception e) {}
+            }
+        }
+    }
+
+    static void graalWithCodeCaching(String parser, String code) throws ScriptException, NoSuchMethodException {
+        try (org.graalvm.polyglot.Engine engine = org.graalvm.polyglot.Engine.create()) {
+            org.graalvm.polyglot.Source source = org.graalvm.polyglot.Source.create("js", code);
+            System.out.println("Truffe - first run with a freshly created Engine");
+            graalUsingEngine(parser, code, engine);
+            System.out.println("Truffe - first run with a reused Engine and code caching");
+            source = org.graalvm.polyglot.Source.create("js", code);
+            graalUsingEngine(parser, code, engine);
+            System.out.println("Truffe - second run with a reused Engine and code caching");
+            source = org.graalvm.polyglot.Source.create("js", code);
+            graalUsingEngine(parser, code, engine);
+            System.out.println("Truffe - third run with a reused Engine and code caching");
+            source = org.graalvm.polyglot.Source.create("js", code);
+            graalUsingEngine(parser, code, engine);
         }
     }
 
@@ -92,12 +140,18 @@ public class Speedtest {
                 System.out.println("Truffle is only available in the GraalVM.");
             }
 
+            graalWithCodeCaching(parser, code);
+
+            System.out.println("Double-check - running Truffle without code caching");
+            graal(parser, code);
+/*
             System.out.println("== Rhino ==");
             rhino(parser, code);
             System.out.println();
             System.out.println("== Nashorn ==");
             nashorn(parser, code);
             System.out.println();
+        */
         } catch (Exception e) {
             System.err.println("Trouble: " + e.toString());
         }
