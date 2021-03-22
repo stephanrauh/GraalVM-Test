@@ -1,5 +1,8 @@
 import org.graalvm.polyglot.*;
 import org.graalvm.polyglot.proxy.*;
+
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
 
 public class RegisterJavaObject {
@@ -26,12 +29,12 @@ public class RegisterJavaObject {
     }
 
     public static List<Integer> callErastosthenesFromJavaScript() {
+        var primejs = new String(Files.readAllBytes(Paths.get("call-java.js")));
         try (Context context = Context.newBuilder("js")
                                    .allowAllAccess(true)
                                .build()) {
             context.getBindings("js").putMember("sieve", new Sieve());
-            Value listOfPrimeNumbers = context.eval("js",
-                   "sieve.eratosthenes(5_000_000);");
+            Value listOfPrimeNumbers = context.eval("js", primejs);
             return listOfPrimeNumbers.as(List.class);
         }
     }
