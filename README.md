@@ -1,5 +1,17 @@
 # Experiments with the GraalVM
 
+## /Node.js-Express.js-Mandelbrot
+This demo takes the Node.js implementation of GraalVM for a spin. It does something you'd never do with JavaScript: number crunching. Adding insult to injury, it forces GraalVM to run the number crunching demo. That's mean, because GraalVM is basically Java, and numbers in JavaScript differ fundamentally from numbers in Java. Nonetheless, GraalVM does a surpringly good job. Not only does the demo run flawlessly, it's peak performance is close to the performance of native Node.js.
+
+In detail:
+- The express server starts noticably slower in GraalVM. Not bad, but sometimes I managed to switch to my browser and reload the page before the server was ready.
+- The initial rendering of the Mandelbrot set is roughly five times slower than in Node.js.
+- After roughly eight repetions, GraalVM Community Edition reaches its peak performance. Now it's roughly running at 50% of the performance of Node.js.
+- Due to license restrictions, I'm not allowed to tell you about the performance of the Enterprise Edition. Just one hint: give it a try.
+- When you start the demo and repeat the calculation multiple times, you'll see a line chart showing the effect of subsequent JIT compiler optimizations nicely.
+
+Please keep in mind that this is a very unfair benchmark. It's designed to bring GraalVM to its limits. In my book, GraalVM passes this test remarkably well. Plus, it shows that Node.js is supported surprisingly well. You can even run an Express.js server using GraalVM.
+
 ## /speculative-optimization
 This example shows the effect of speculative method-call optimization and de-optimization. The example shows the speculative optimization for virtual method calls with only one implementation, plus the de-optimization when it turns out there's a second implementation. Likewise, the third method call causes a second de-optimization. On my 2015 MacBook Pro using AdoptOpenJDK 11.0.5+10, this result were like so:
 

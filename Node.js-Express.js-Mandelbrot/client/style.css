@@ -1,0 +1,127 @@
+body {
+  font-family: open-sans, sans-serif, arial;
+  padding: 30px 20px;
+  background: #333;
+}
+
+h1,
+h2 {
+  text-align: center;
+  color: white;
+}
+
+form {
+  display: table;
+  margin: 30px auto;
+  position: relative;
+  list-style: none;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 768px;
+  background: #fff;
+  text-align: center;
+  border-radius: 4px;
+}
+
+#plot {
+  list-style: none;
+  padding: 0px;
+  box-sizing: content-box;
+  width: 768px;
+  height: 768px;
+  background: black;
+  position: relative;
+
+  /*pixelated http://phrogz.net/tmp/canvas_image_zoom.html*/
+  image-rendering: optimizeSpeed; /* Legal fallback */
+  image-rendering: -moz-crisp-edges; /* Firefox        */
+  image-rendering: -o-crisp-edges; /* Opera          */
+  image-rendering: -webkit-optimize-contrast; /* Safari         */
+  image-rendering: optimize-contrast; /* CSS3 Proposed  */
+  image-rendering: crisp-edges; /* CSS4 Proposed  */
+  image-rendering: pixelated; /* CSS4 Proposed  */
+  -ms-interpolation-mode: nearest-neighbor; /* IE8+           */
+}
+
+#events {
+  display: block;
+  margin: 30px auto;
+  position: relative;
+  list-style: none;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 768px;
+  background: #222;
+  box-shadow: inset;
+  text-align: center;
+  border-radius: 4px;
+  box-shadow: inset 0px 2px 6px RGBa(0, 0, 0, 0.2);
+  height: 150px;
+}
+
+#canvasContainer {
+  max-width: 768px;
+  max-height: 768px;
+  overflow: hidden;
+  border-radius: 4px;
+  margin: 30px auto;
+  display: block;
+  position: relative;
+}
+
+#footnote {
+  text-align: center;
+  color: #ddd;
+  font-size: 10px;
+}
+
+table {
+  margin: 0px auto;
+  text-align: center;
+}
+
+label {
+  color: #888;
+  font-size: 10px;
+}
+
+input {
+  width: 80px;
+}
+
+input,
+button {
+  height: 28px;
+}
+
+#plot li:before {
+  content: "\25a0";
+  font-size: 1px;
+}
+
+.container {
+    display: flex; /* or inline-flex */
+}
+
+.history {
+    margin: 30px auto;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 500px;
+    text-align: end;
+}
+
+.centered > div {
+    flex-grow: 1;
+}
+
+.history {
+    background: #fff;
+    box-shadow: inset;
+    border-radius: 4px;
+    box-shadow: inset 0px 2px 6px RGBa(0, 0, 0, 0.2);
+}
+
+.distance-between {
+    gap: 0px 20px;
+}

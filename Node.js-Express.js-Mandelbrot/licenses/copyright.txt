@@ -1,0 +1,1 @@
+The Mandelbrot algorithm has been publish by GitHub user sezanzeb on https://github.com/sezanzeb/Node.js-Mandelbrot under an <a href="http://unlicense.org">Unlicense</a>.

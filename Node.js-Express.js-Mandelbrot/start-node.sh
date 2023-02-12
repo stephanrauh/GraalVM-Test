@@ -1,0 +1,2 @@
+node --version
+npm start

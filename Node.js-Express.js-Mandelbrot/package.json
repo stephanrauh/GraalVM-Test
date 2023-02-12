@@ -1,0 +1,14 @@
+{
+  "name": "mandelbrot_nodejs",
+  "version": "1.0.0",
+  "description": "A small demo rendering Mandelbrot images on an express server",
+  "main": "cluster.js",
+  "scripts": {
+    "start": "node server/cluster.js"
+  },
+  "author": "",
+  "license": "Apache 2.0",
+  "devDependencies": {
+    "prettier": "^2.8.4"
+  }
+}

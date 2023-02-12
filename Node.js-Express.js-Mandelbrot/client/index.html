@@ -1,0 +1,75 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>GraalVM Node.js demo</title>
+</head>
+
+<body>
+    <div class="container distance-between centered">
+        <div>
+            <h1 id="header">Express.js Mandelbrot demo</h1>
+            <div id="canvasContainer">
+                <canvas id="plot"> </canvas>
+            </div>
+            <form onSubmit="return false">
+                <table>
+                    <tr>
+                        <td>
+                            <input id="param1" type="text" placeholder="x" value="-0.7" />
+                        </td>
+                        <td><input id="param2" type="text" placeholder="y" value="0" /></td>
+                        <td>
+                            <input id="param3" type="text" placeholder="zoom" value="0.7" />
+                        </td>
+                        <td>
+                            <input id="param4" type="text" placeholder="res" value="768" />
+                        </td>
+                        <td><button onClick="start()">calc</button></td>
+                    </tr>
+                    <tr>
+                        <td><label>x</label></td>
+                        <td><label>y</label></td>
+                        <td><label>zoom</label></td>
+                        <td><label>res</label></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><button onClick="preset(-0.7, 0, 0.7, 256)">preset 1</button></td>
+                        <td>
+                            <button onClick="preset(-0.745, 0.1, 2000, 768)">preset 2</button>
+                        </td>
+                        <td><button onClick="loop()">loop 25 times</button></td>
+                    </tr>
+                </table>
+            </form>
+            <h2 id="totaltime"></h2>
+        </div>
+        <div>
+            <h1>Performance history</h1>
+            <div class="container history centered">
+                <canvas id="histogram" width="500" height="500"/>
+            </div>
+           <div class="container history centered">
+                <div>
+                    <h3>Iteration</h3>
+                    <div id="iteration" class="label"></div>
+                </div>
+                <div style="display:none">
+                    <h3>Client history</h3>
+                    <div id="clientHistory" class="label"></div>
+                </div>
+                <div>
+                    <h3>Server history</h3>
+                    <div id="serverHistory"></div>
+                </div>
+                <div></div>
+            </div>
+  
+        </div>
+    </div>
+    <script src="client.js"></script>
+</body>
+
+</html>

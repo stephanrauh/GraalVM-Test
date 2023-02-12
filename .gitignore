@@ -25,3 +25,5 @@ node_modules/
 hotspot*.log
 
 .DS_Store
+# omit screenshots of GraalVM Enterprise Edition benchmarks (due to license restrictions)
+*ee*.jpg
