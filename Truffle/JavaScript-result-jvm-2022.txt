@@ -1,0 +1,29 @@
+Standard node.js
+v16.19.0
+1. calculation took 72 milliseconds
+2. calculation took 45 milliseconds
+3. calculation took 44 milliseconds
+4. calculation took 42 milliseconds
+5. calculation took 71 milliseconds
+10. calculation took 69 milliseconds
+50. calculation took 69 milliseconds
+100. calculation took 69 milliseconds
+150. calculation took 70 milliseconds
+200. calculation took 69 milliseconds
+250. calculation took 69 milliseconds
+300. calculation took 71 milliseconds
+
+GraalVM 22.3.1 JavaScript
+v16.18.1
+1. calculation took 943 milliseconds
+2. calculation took 548 milliseconds
+3. calculation took 333 milliseconds
+4. calculation took 273 milliseconds
+5. calculation took 267 milliseconds
+10. calculation took 264 milliseconds
+50. calculation took 85 milliseconds
+100. calculation took 71 milliseconds
+150. calculation took 65 milliseconds
+200. calculation took 65 milliseconds
+250. calculation took 87 milliseconds
+300. calculation took 64 milliseconds
