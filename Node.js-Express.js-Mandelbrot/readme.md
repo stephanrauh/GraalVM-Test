@@ -7,7 +7,7 @@
 ## installation
 
       npm start
-      #then open Firefox or Chromium and visit localhost:4000
+      #then open Firefox or Chromium and visit localhost:4200
 
 <sup>_The rendering is smoother in chromium than in firefox._</sup>
 
