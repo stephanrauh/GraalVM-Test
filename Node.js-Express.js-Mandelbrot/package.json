@@ -4,7 +4,8 @@
   "description": "A small demo rendering Mandelbrot images on an express server",
   "main": "cluster.js",
   "scripts": {
-    "start": "node server/cluster.mjs"
+    "build": "uglifyjs --compress --mangle -o server/minified-server.mjs -- server/all-in-one.mjs",
+    "start": "node server/minified-server.mjs"
   },
   "author": "",
   "license": "Apache 2.0",
@@ -12,5 +13,8 @@
     "@types/node": "^18.13.0",
     "eslint": "^8.34.0",
     "prettier": "^2.8.4"
+  },
+  "dependencies": {
+    "uglify-js": "^3.17.4"
   }
 }
