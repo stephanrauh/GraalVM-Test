@@ -7,4 +7,4 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/graalvm-ee-java19-22.3.1/Cont
 
 # gu install nodejs
 node --version
-node server/cluster.js graalvm="EE" 
+npm start

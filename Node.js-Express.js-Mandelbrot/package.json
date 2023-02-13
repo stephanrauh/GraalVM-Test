@@ -4,11 +4,13 @@
   "description": "A small demo rendering Mandelbrot images on an express server",
   "main": "cluster.js",
   "scripts": {
-    "start": "node server/cluster.js"
+    "start": "node server/cluster.mjs"
   },
   "author": "",
   "license": "Apache 2.0",
   "devDependencies": {
+    "@types/node": "^18.13.0",
+    "eslint": "^8.34.0",
     "prettier": "^2.8.4"
   }
 }
