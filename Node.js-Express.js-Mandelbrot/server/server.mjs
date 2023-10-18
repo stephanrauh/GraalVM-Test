@@ -18,7 +18,7 @@ function dispatcher(request, response) {
   // understand the request
   let path = request.url;
   if (path == "/") path = "/index.html";
-  console.log("request for " + path);
+  // console.log("request for " + path);
 
   // if client requested data
   if (path.startsWith("/db.json")) {

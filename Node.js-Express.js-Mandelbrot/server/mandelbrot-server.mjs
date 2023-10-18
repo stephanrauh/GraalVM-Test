@@ -17,7 +17,7 @@ function decodeGetParams(url) {
 }
 
 function parseurl(path) {
-  console.log(path);
+//  console.log(path);
   // get parameters from the url
   const params = decodeGetParams(path);
   const zoom = parseFloat(params.zoom);
@@ -26,7 +26,7 @@ function parseurl(path) {
   const mini = parseFloat(params.y) - 1 / zoom;
   const maxi = parseFloat(params.y) + 1 / zoom;
 
-  console.log(`Coordinates: (${minx},${mini}) - (${maxx},${maxi})`);
+//  console.log(`Coordinates: (${minx},${mini}) - (${maxx},${maxi})`);
 
   const size = parseInt(params.size); // known as "size" client side
   const width = Math.abs(maxx - minx);
@@ -51,7 +51,7 @@ function parseurl(path) {
 
 export function serveMandelbrotSet(request, response, path) {
   // initialize the connection
-  console.log("client requesting stream");
+  // console.log("client requesting stream");
   response.writeHead(200, {
     "Content-Type": "text/event-stream",
     "Cache-Control": "no-cache",
@@ -99,7 +99,7 @@ export function serveMandelbrotSet(request, response, path) {
           // if no point has been found within 5 seconds, close the stream
           if (new Date().getTime() - calculateTime > 5000) {
             clearInterval(interval);
-            console.log("no more points found for stream id: " + id);
+//            console.log("no more points found for stream id: " + id);
             // free up memory
             state = {};
             mb_answer = {};
@@ -108,7 +108,7 @@ export function serveMandelbrotSet(request, response, path) {
         }
       } else {
         clearInterval(interval);
-        console.log("closed because writeQueueSize is too lage; stream id: " + id);
+//        console.log("closed because writeQueueSize is too lage; stream id: " + id);
         // free up memory
         state = {};
         mb_answer = {};
@@ -116,7 +116,7 @@ export function serveMandelbrotSet(request, response, path) {
       }
     } else {
       clearInterval(interval);
-      console.log("closed because _handle is null; stream id: " + id);
+//      console.log("closed because _handle is null; stream id: " + id);
       // free up memory
       state = {};
       mb_answer = {};
@@ -128,7 +128,7 @@ export function serveMandelbrotSet(request, response, path) {
     "close",
     function () {
       clearInterval(interval);
-      console.log("client closed stream id: " + id);
+//      console.log("client closed stream id: " + id);
       // free up memory
       state = {};
       mb_answer = {};
