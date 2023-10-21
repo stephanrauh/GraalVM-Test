@@ -50,7 +50,8 @@ function serveVersionNumbers(response) {
   let answer = "";
   const version = process.version;
   const enginePath = process.argv0;
-  const graalEngine = enginePath.split("/").find((x) => x.startsWith("graalvm"));
+  console.log(">>>" + enginePath);
+  const graalEngine = enginePath.split("/").find((x) => x.startsWith("graal"));
   if (graalEngine) {
     answer = graalEngine + " (Node.js " + version + ")";
   } else {
